@@ -30,8 +30,9 @@ def mainLoop(device):
 
     # The Gripper command is received from the topic named 'SModelRobotOutput'
     rospy.Subscriber('SModelRobotOutput', outputMsg.SModel_robot_output, gripper.refreshCommand)
-    rospy.logwarn('\033[1m Launch SModelSimpleController.py from robotiq_s_model_control to control gripper with default controller \033[0;0m')
-    rospy.logwarn('rosrun robotiq_s_model_control SModelSimpleController.py')
+    rospy.loginfo('Opening communication with gripper')
+    rospy.loginfo('Check SModelSimpleController.py in robotiq_s_model_control package')
+    rospy.loginfo('Gripper com ready. SUCCESS')
 
     # We loop
     while not rospy.is_shutdown():
